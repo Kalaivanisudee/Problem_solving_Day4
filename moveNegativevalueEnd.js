@@ -1,4 +1,4 @@
-let arr=[3,-1,4,-2,7,-5];
+// let arr=[3,-1,4,-2,7,-5];
 // console.log(arr.sort((a,b)=>b-a));//[ 7, 4, 3, -1, -2, -5 ] but we need [3,4,7,-1,-2,-5]
 
 //method-1
@@ -15,6 +15,7 @@ arr.sort((a,b)=>{
 console.log(arr);//[ 3, 4, 7, -1, -2, -5 ] 
 */
 //Method-2
+/*
 let postiveArr=[];
 let negativeArr=[];
 for (let i=0;i<arr.length;i++){
@@ -26,6 +27,21 @@ for (let i=0;i<arr.length;i++){
 }
 let resultArray=postiveArr.concat(negativeArr);
 console.log(resultArray);//[ 3, 4, 7, -1, -2, -5 ]
-
+*/
+//Method 3
+let arr=[3,-1,4,-2,7,-5];
+for(let i=0;i<arr.length;i++){
+    if(arr[i]>=0){
+        continue;//if possitive continue to the next element.
+    }
+    for(let j=i+1;j<arr.length;j++){
+        if(arr[j]>=0){
+            temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+        }
+    }
+}
+console.log(arr);//[ 3, 7, 4, -2, -1, -5 ]
 
 
