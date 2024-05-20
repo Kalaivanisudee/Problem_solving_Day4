@@ -1,5 +1,5 @@
 let arr=["Apple","Orange","Grapes","Mango"];
-
+/* 
 function reverseStr(str){
     let reveserdString="";
     for(let i=str.length-1;i>=0;i--){
@@ -9,5 +9,10 @@ function reverseStr(str){
 }
 for(let i=0; i<arr.length;i++){
     arr[i]=reverseStr(arr[i])
+}
+console.log(arr);
+*/
+for(let i=0;i<arr.length;i++){
+    arr[i]=arr[i].split("").reverse().join("");
 }
 console.log(arr);
